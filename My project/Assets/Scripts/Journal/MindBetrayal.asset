@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
+  m_Name: MindBetrayal
+  m_EditorClassIdentifier: Assembly-CSharp::JournalSO
+  title: Sweet Temptress
+  entry: I don't think I'll make it out. We've been lost down here for several days,
+    but it finally set in.   Quinn went to look for a way out and came back to us
+    claiming that the way out is through embracing the spirit  He looked mad and
+    obsessed with her. We hid under a pile of bones in an open area- Quinn ran to
+    the spirit.  He was "embraced" by her. His spirit was drained. He looked like
+    a bag of skin with withered bones to fill the innards of the bag.
+  number: 1
+  image: {fileID: 0}
