@@ -14,19 +14,12 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 0.025f;
     [SerializeField] private float minPitch = -80f;
     [SerializeField] private float maxPitch = 80f;
-    [SerializeField] private bool lockCursor = true;
-
     private Vector2 lookInput;
     private float pitch = 0f; // vertical rotation accumulator
 
     private void Awake()
     {
         input = new InputSystem_Actions();
-        if (lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
     }
 
     private void OnEnable()
