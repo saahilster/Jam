@@ -9,7 +9,7 @@ public class Slots
     public void SetItem(ItemData newItem, int amount)
     {
         item = newItem;
-        quantity = amount;
+        quantity = (newItem == null) ? 0 : amount;
     }
 
     public void Clear()

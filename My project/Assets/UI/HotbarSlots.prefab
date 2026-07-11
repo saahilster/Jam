@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3421614994832187310}
-  - component: {fileID: 932460164623890341}
+  - component: {fileID: 6109309677001598573}
   m_Layer: 5
   m_Name: HotbarSlots
   m_TagString: Untagged
@@ -31,8 +31,8 @@ RectTransform:
   m_Children:
   - {fileID: 812137674088941056}
   - {fileID: 97965143659202161}
-  - {fileID: 6549879643476447652}
   - {fileID: 1787859787262155843}
+  - {fileID: 6549879643476447652}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &932460164623890341
+--- !u!114 &6109309677001598573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3726c4a69491dbc41b9c1fce1320b75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HotbarSlotUI
-  iconImage: {fileID: 7124292845334622277}
+  iconImage: {fileID: 8075621201729950135}
   quantityText: {fileID: 3092910722798627298}
   selectedItemHighlight: {fileID: 4076549429639774445}
 --- !u!1 &2313669501630265210
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6202878414801048038}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

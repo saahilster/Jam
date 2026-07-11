@@ -19,17 +19,15 @@ public class HotbarSlotUI : MonoBehaviour
         {
             iconImage.enabled = true;
             iconImage.sprite = slot.item.icon;
+
+            quantityText.enabled = slot.quantity > 1;
+            quantityText.text = slot.quantity.ToString();
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void SetSelected(bool isSelected)
     {
-        
+        selectedItemHighlight.SetActive(isSelected);
     }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
 }
