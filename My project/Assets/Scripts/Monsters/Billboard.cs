@@ -16,7 +16,7 @@ public class Billboard : MonoBehaviour
     {
         Vector3 direction = Camera.main.transform.position - transform.position;
         direction.y = 0f;
-        float currentYRoation = transform.eulerAngles.y;
+        float currentYRoation = Quaternion.LookRotation(direction).eulerAngles.y;
         float delta = Mathf.DeltaAngle(lastYRotation, currentYRoation);
         if (Mathf.Abs(delta) >= rotationThreshhold)
         {

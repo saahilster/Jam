@@ -28,4 +28,4 @@ public class EnemyData : ScriptableObject
     public float animationFrameRate;
 }
 
-public enum MovementType { Patrol, DirectChase, Ambush, Flee}
+public enum MovementType { Patrol, DirectChase,Flee, Listening}
