@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
   m_Name: MindBetrayal
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
-  title: Sweet Temptress
-  entry: I don't think I'll make it out. We've been lost down here for several days,
-    but it finally set in.   Quinn went to look for a way out and came back to us
-    claiming that the way out is through embracing the spirit  He looked mad and
-    obsessed with her. We hid under a pile of bones in an open area- Quinn ran to
-    the spirit.  He was "embraced" by her. His spirit was drained. He looked like
-    a bag of skin with withered bones to fill the innards of the bag.
+  title: Don't Fall for it.
+  entry: 'I don''t think I''ll make it out. We''ve been lost down here for several
+    days, but it finally set in.    Quinn went to look for a way out and came back
+    to us claiming that the way out. He used his flashlight on the walls and claimed
+    to find a message. The message told him to embrace the spirit or similar to that.
+    For those who come after. Escape this nightmare in anyway you deem fit. '
   number: 1
   image: {fileID: 0}
+  playerResponse: Jeez sounds like quinn went complete mad. Thank god I'm escaping.
