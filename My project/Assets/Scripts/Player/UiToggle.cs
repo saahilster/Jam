@@ -45,6 +45,7 @@ public class UiToggle : MonoBehaviour
         else
         {
             menuCanvas.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
