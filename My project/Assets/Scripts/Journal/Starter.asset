@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
+  m_Name: Starter
+  m_EditorClassIdentifier: Assembly-CSharp::JournalSO
+  title: Turn Back
+  entry: I miss my wife. The catacombs are scary, I lost my friends- and soon my
+    life. I fear that my speech is fading day by day. My heart has gone cold no hope
+    left to hold. I lost my hearing. That monster- please I pray for the men and
+    women who stand along my soon corpse.  An end of your own volition is better
+    fit than what these entities hold in store.
+  number: 2
+  image: {fileID: 0}

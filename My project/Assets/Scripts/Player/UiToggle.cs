@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class UiToggle : MonoBehaviour
 {
-    [SerializeField] private GameObject menuCanvas;
+    [SerializeField] private GameObject JournalCanvas;
     private InputSystem_Actions input;
     private InputAction menuToggle;
     public bool toggled;
@@ -12,9 +12,8 @@ public class UiToggle : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        menuCanvas.SetActive(false);
+        JournalCanvas.SetActive(false);
         input = new InputSystem_Actions();
-
     }
 
     void OnEnable()
@@ -32,22 +31,20 @@ public class UiToggle : MonoBehaviour
     private void ToggleMenu(InputAction.CallbackContext context)
     {
         toggled = !toggled;
-        Debug.Log(toggled);
     }
 
     void Update()
     {
+        JournalCanvas.SetActive(toggled);
+        Cursor.visible = toggled;
+
         if (toggled)
-        {   menuCanvas.SetActive(true);
+        {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
         else
         {
-            menuCanvas.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
         }
-
     }
-
 }

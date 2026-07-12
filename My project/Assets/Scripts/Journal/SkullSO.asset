@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
+  m_Name: SkullSO
+  m_EditorClassIdentifier: Assembly-CSharp::JournalSO
+  title: 'Let it Shine '
+  entry: For all the dead- For all the dread Count it. Each soul is burdened by being
+    shackled to the confines of this room.   Understand the pain soon to come. give
+    us YOUR LIGHT and shine it amongst these nearby walls. We shall reveal what our
+    opressors hid from your eyes.
+  number: 333
+  image: {fileID: 0}

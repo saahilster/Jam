@@ -40,10 +40,18 @@ public class JournalCollection : MonoBehaviour
 
     public void IncrementEntry()
     {
-        currentIndex++;
+        if (currentIndex < journalEntries.Count)
+        {
+            currentIndex++;
+        }
+        
     }
     public void DecrementEntry()
     {
-        currentIndex--;
+        if(currentIndex > 0)
+        {
+            currentIndex--;
+        }
+        
     }
 }
