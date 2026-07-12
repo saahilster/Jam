@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/EnemyData")]
@@ -5,7 +6,9 @@ public class EnemyData : ScriptableObject
 {
     public string enemyName;
     public Sprite enemySprite;
-    //public MovementType movementType;
+    public float patrolSpeed;
+    public float chaseSpeed;
+    public MovementType movementType;
 
     //detection
     public float detectionRadius;
@@ -21,4 +24,8 @@ public class EnemyData : ScriptableObject
 
     //Animation
     public Sprite[] walkFrames;
+    public Sprite[] chaseFrames;
+    public float animationFrameRate;
 }
+
+public enum MovementType { Patrol, DirectChase, Ambush, Flee}
