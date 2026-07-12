@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         currentMovement = new PatrolMovement(patrolPoints);
+        agent.updateRotation = false;
+
+
     }
     void Start()
     {
