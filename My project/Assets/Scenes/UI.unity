@@ -567,8 +567,8 @@ RectTransform:
   m_GameObject: {fileID: 651509725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.7099999, y: 1.7099999, z: 1.7099999}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1535008371}
   - {fileID: 1087188881}
@@ -579,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228.7, y: -475.3}
+  m_AnchoredPosition: {x: -67.75, y: -453}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651509727
@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8a0a6d9ce13c54594a3c444ffc1003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HotBar
+  testItem: {fileID: 11400000, guid: 58e68c7825df66e4c8e2b76c6484f5c9, type: 2}
 --- !u!1001 &792633068
 PrefabInstance:
   m_ObjectHideFlags: 0

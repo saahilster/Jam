@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db87a6a7d1f3454781359da831e671b, type: 3}
-  m_Name: Chisel
+  m_Name: Flashlight
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Chisel
+  itemName: 
   icon: {fileID: 21300000, guid: c0e93acc9c8f781448f66050140047b5, type: 3}
-  maxStackSize: 4
+  maxStackSize: 0
