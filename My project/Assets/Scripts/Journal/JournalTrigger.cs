@@ -1,23 +1,47 @@
+using System.Collections;
+using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 //Script is to add a journal entry to player's inventory
 public class JournalTrigger : MonoBehaviour
 {
-    [SerializeField] private JournalSO entry; 
+
+
+    [SerializeField] private GameObject uiNoti;
+    [SerializeField] private GameObject responseUI;
+    [SerializeField] private TextMeshProUGUI responseText;
+
+    [SerializeField] private JournalSO entry;
     [SerializeField] private JournalCollection manager;
+
+    void Awake()
+    {
+        uiNoti.SetActive(false);
+        responseUI.SetActive(false);
+    }
+    IEnumerator ActivationTime(float time, GameObject ui)
+    {
+        ui.SetActive(true);
+        yield return new WaitForSeconds(time);
+        ui.SetActive(false);
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Found");
-            if(entry == null)
+            if (entry == null)
             {
                 Debug.Log("Entry null");
                 return;
             }
             manager.AddToCollection(entry);
+            StartCoroutine(ActivationTime(2f, uiNoti));
+            StartCoroutine(ActivationTime(7f, responseUI));
+            responseText.text = entry.playerResponse;
             manager.PrintCollection();
-        } 
+        }
     }
 }

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
   m_Name: Quinns
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
-  title: Sweet Salvation
-  entry: Oh how irradiant you are. Your sweet porcelain body which is nullified from
-    this numbing rot down here. In all piles of bones I've tread through you are
-    my anchor- My guiding light. I'll seek you- Embrace me- Save me.
+  title: My only chance
+  entry: Light the walls and she will answer. The only way out is with her.
   number: 2
   image: {fileID: 0}
+  playerResponse: Hmm. intriguing..

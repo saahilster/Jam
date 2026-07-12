@@ -7,4 +7,5 @@ public class JournalSO : ScriptableObject
     public string entry;
     public int number;
     public Sprite image;
+    public string playerResponse;
 }
