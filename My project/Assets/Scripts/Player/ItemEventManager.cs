@@ -23,5 +23,10 @@ public class ItemEventManager : MonoBehaviour
             hasShovel = true;
             Destroy(other.gameObject);
         }
+        else if(other.gameObject.tag == "Rock" && hasShovel)
+        {
+            Debug.Log("worked");
+            Destroy(other.gameObject);
+        }
     }
 }

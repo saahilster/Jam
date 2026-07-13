@@ -18,13 +18,15 @@ public class BreakRock : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && manager.hasShovel)
+        if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Found player");
+            Destroy(gameObject);
             breakRock.Invoke();
         }
     }
 
     public void DestroyRock(){
-        Destroy(gameObject);
+        
     }
 }
