@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         currentMovement = new PatrolMovement(patrolPoints);
-        agent.updateRotation = false;
+        //agent.updateRotation = false;
 
 
     }
@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     currentState = State.Search;
-                    currentMovement = new SearchMovement(lastKnownPosition);
+                    //currentMovement = new SearchMovement(lastKnownPosition);
                     searchTimer = 0f;
                 }
                 break;
