@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Shovel
   - Rock
+  - Trigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Trigger
   - Water
   - UI
   - Objects
