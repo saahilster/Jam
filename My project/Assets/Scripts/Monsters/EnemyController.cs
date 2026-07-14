@@ -6,7 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Transform player;
-    [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private Transform patrolPointsParent;
+    private Transform[] patrolPoints;
     //[SerializeField] private PlayerNoise playerNoise;
     //[SerializeField] private MicListener micListner;
 
@@ -20,6 +21,12 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        //patrol
+        patrolPoints = new Transform[patrolPointsParent.childCount];
+        for (int i = 0; i < patrolPointsParent.childCount; i++)
+        {
+            patrolPoints[i] = patrolPointsParent.GetChild(i);
+        }
         currentMovement = new PatrolMovement(patrolPoints);
         //agent.updateRotation = false;
 
