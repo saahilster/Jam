@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
+  m_Name: Personal Messages
+  m_EditorClassIdentifier: Assembly-CSharp::JournalSO
+  title: Not an average catacomb.
+  entry: It seems like the walls here change messages. My brother said the wall said
+    infertility, but I didn't see that at all? For me it said death. Just what the
+    hell is at play here.
+  number: 0
+  image: {fileID: 0}
+  playerResponse: I need to see no way. I wonder were the paintings on the wall specific
+    to me?
