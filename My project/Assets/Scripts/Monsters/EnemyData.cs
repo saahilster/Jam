@@ -14,11 +14,12 @@ public class EnemyData : ScriptableObject
     public float fieldOfViewAngle;
     public LayerMask obstacleLayerMask;
     public float lostInterestTime;
+    public float chaseLoseDuration;
     public float hearingRadius;
     public float micThreshhold;
     public float searchDuration;
-    
     public int damageToPlayer;
+    public DetectionType detectionType;
     //audio
     public AudioClip[] footstepSounds;
     public AudioClip detectionSound;

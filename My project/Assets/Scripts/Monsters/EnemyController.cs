@@ -2,21 +2,28 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum State {Patrol, Chase, Search, Flee}
+public enum DetectionType {Sight, Audio}
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Transform player;
     [SerializeField] private Transform patrolPointsParent;
     private Transform[] patrolPoints;
-    //[SerializeField] private PlayerNoise playerNoise;
-    //[SerializeField] private MicListener micListner;
 
     private NavMeshAgent agent;
     private MovementBehavior currentMovement;
     private float searchTimer;
     private Vector3 lastKnownPosition;
-    private enum State {Patrol, Chase, Search, Flee}
+    private float lastDetectionTime;
     private State currentState;
+
+    private DetectionBehavior detectionBehavior;
+    public DetectionType detectionType;
+    public MicListener micListener;
+    public Transform Player => player;
+    public EnemyData Data => enemyData;
+    public MicListener Mic => micListener;
 
     void Awake()
     {
@@ -28,6 +35,7 @@ public class EnemyController : MonoBehaviour
             patrolPoints[i] = patrolPointsParent.GetChild(i);
         }
         currentMovement = new PatrolMovement(patrolPoints);
+        detectionBehavior = GetDetectionBehavior(enemyData.detectionType);
         //agent.updateRotation = false;
 
 
@@ -44,35 +52,36 @@ public class EnemyController : MonoBehaviour
         switch (currentState)
         {
             case State.Patrol:
-                if (CanSeePlayer())
+                if (detectionBehavior.CanDetectPlayer(this))
                 {
-                    currentState = State.Chase;
-                    currentMovement = new ChaseMovement();
+                    currentState = detectionBehavior.GetReactionState();
+                    currentMovement = GetMovementForState(currentState);
                 }
                 break;
             case State.Chase:
-                if (CanSeePlayer())
+                if (detectionBehavior.CanDetectPlayer(this))
                 {
                     lastKnownPosition = player.position;
+                    lastDetectionTime = Time.time;
                 }
-                else
+                else if (Time.time - lastDetectionTime > enemyData.chaseLoseDuration)
                 {
-                    currentState = State.Search;
-                    //currentMovement = new SearchMovement(lastKnownPosition);
+                    currentState = State.Patrol;
+                    currentMovement = GetMovementForState(currentState);
                     searchTimer = 0f;
                 }
                 break;
             case State.Search:
                 searchTimer += Time.deltaTime;
-                if (CanSeePlayer())
+                if (detectionBehavior.CanDetectPlayer(this))
                 {
-                    currentState = State.Chase;
-                    currentMovement = new ChaseMovement();
+                    currentState = detectionBehavior.GetReactionState();
+                    currentMovement = GetMovementForState(currentState);
                 }
                 else if (searchTimer >= enemyData.lostInterestTime)
                 {
                     currentState = State.Patrol;
-                    currentMovement = new PatrolMovement(patrolPoints);
+                    currentMovement = GetMovementForState(currentState);
                 }
                 break;
         }
@@ -82,21 +91,24 @@ public class EnemyController : MonoBehaviour
     {
         currentMovement = newMovement;
     }
-    private bool CanSeePlayer()
+    
+    private DetectionBehavior GetDetectionBehavior(DetectionType type)
     {
-        float distance = Vector3.Distance(transform.position, player.position);
-        if (distance > enemyData.detectionRadius)
-            return false;
-
-        Vector3 directionToPlayer = (player.position - transform.position).normalized;
-        float angle = Vector3.Angle(transform.forward, directionToPlayer);
-        if (angle > enemyData.fieldOfViewAngle * 0.5f)
-            return false;
-
-        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, distance, enemyData.obstacleLayerMask))
+        switch (type)
         {
-            return false;
+            case DetectionType.Sight: return new SightDetection();
+            case DetectionType.Audio: return new AudioDetection();
+            default: return new SightDetection();
         }
-        return true;
+    }
+    private MovementBehavior GetMovementForState(State state)
+    {
+        switch (state)
+        {
+            case State.Chase: return new ChaseMovement();
+            //case State.Search: return new SearchMovement(lastKnownPosition);
+            case State.Patrol: return new PatrolMovement(patrolPoints);
+            default: return new PatrolMovement(patrolPoints);
+        }
     }
 }
