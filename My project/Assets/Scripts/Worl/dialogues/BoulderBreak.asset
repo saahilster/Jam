@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821cd0f35713cf4d90f8aa378a0247a, type: 3}
   m_Name: BoulderBreak
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTriggers
-  dialogue: Looks breakable to me. Let me just walk towards it.
+  dialogue: Feels like this could be breakable if I had a shovel.
