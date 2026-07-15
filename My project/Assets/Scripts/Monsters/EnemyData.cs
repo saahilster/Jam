@@ -14,6 +14,9 @@ public class EnemyData : ScriptableObject
     public float fieldOfViewAngle;
     public LayerMask obstacleLayerMask;
     public float lostInterestTime;
+    public float hearingRadius;
+    public float micThreshhold;
+    public float searchDuration;
     
     public int damageToPlayer;
     //audio
