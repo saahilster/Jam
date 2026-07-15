@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemEventManager : MonoBehaviour
 {
     public bool hasShovel = false;
+    public bool hasMask = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,11 @@ public class ItemEventManager : MonoBehaviour
         {
             Debug.Log("worked");
             Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("Mask"))
+        {
+            hasMask = true;
+            Debug.Log("mask obtained.");
         }
     }
 }
