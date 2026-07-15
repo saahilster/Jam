@@ -56,4 +56,18 @@ public class SoundManager : MonoBehaviour
         source[src].Stop();
         source[src].clip = null;
     }
+
+    public void DirectPlay(AudioSource src, AudioClip clip, float vol)
+    {
+        src.clip = clip;
+        src.volume = vol;
+        if (!src.isPlaying)
+        {
+            src.Play();
+        }
+    }
+    public void DirectStop(AudioSource src)
+    {
+        src.Stop();
+    }
 }

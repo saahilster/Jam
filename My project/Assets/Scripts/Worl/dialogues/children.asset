@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821cd0f35713cf4d90f8aa378a0247a, type: 3}
   m_Name: children
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTriggers
-  dialogue: a couple kids. Just the amount I wanted with Rumi.. I need to escape
-    or these walls will confine me to my demise.
+  dialogue: 
