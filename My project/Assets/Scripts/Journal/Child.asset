@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
-  m_Name: FakeWalls
+  m_Name: Child
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
-  title: 'Expidition 33 Report:'
-  entry: Beware- Some walls appear black, but can be walked through?? It makes no
-    sense, yet it took the lives of my crew. The catacombs crawl with vindictive
-    spirits that will guide you astray. Beware.
+  title: ...
+  entry: This entity with holes killed my entire party. I was lucky enough to see
+    it's mask and not the monster. God please have mercy on all fools who tread here.
   number: 0
   image: {fileID: 0}
-  playerResponse: Good to know.
+  playerResponse: another monster? good god man.

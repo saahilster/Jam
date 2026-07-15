@@ -31,10 +31,6 @@ public class UiToggle : MonoBehaviour
     private void ToggleMenu(InputAction.CallbackContext context)
     {
         toggled = !toggled;
-    }
-
-    void Update()
-    {
         JournalCanvas.SetActive(toggled);
         Cursor.visible = toggled;
 
@@ -46,5 +42,20 @@ public class UiToggle : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    void Update()
+    {
+        // JournalCanvas.SetActive(toggled);
+        // Cursor.visible = toggled;
+
+        // if (toggled)
+        // {
+        //     Cursor.lockState = CursorLockMode.None;
+        // }
+        // else
+        // {
+        //     Cursor.lockState = CursorLockMode.Locked;
+        // }
     }
 }

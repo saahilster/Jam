@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private PlayerAudioManager pam;
 
     [Header("Input")]
     private InputSystem_Actions input;
@@ -35,6 +36,15 @@ public class PlayerMovement : MonoBehaviour
     {
         // Read raw input each frame
         moveInput = moveAction.ReadValue<Vector2>();
+        if (moveInput != Vector2.zero)
+        {
+            pam.PlaySound(SoundClip.WALKING);
+        }
+        else
+        {
+            pam.StopSound(SoundClip.WALKING);
+        }
+        
     }
 
     private void FixedUpdate()
