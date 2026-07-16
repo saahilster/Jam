@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
   title: Possible Escape
   entry: For those who come after- There seems to be a glimpse of light through the
-    crack to the right. Seek it out and document it for team 32. I'm sure they will
-    understand.
+    crack towards the far right. For some reason- there's an old chair with white
+    floors. Seek it out and document it for team 32. I'm sure they will understand.
   number: 0
   image: {fileID: 0}
   playerResponse: ' '
