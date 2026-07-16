@@ -1,5 +1,9 @@
+using System.Collections;
+using System.Diagnostics.CodeAnalysis;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private PlayerAudioManager pam;
     [SerializeField] private Animator anim;
+    private bool sprintCalled;
+    public int hungerBar = 5;
 
     [Header("Input")]
     private InputSystem_Actions input;
@@ -32,13 +38,38 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction.Disable();
     }
+    IEnumerator DepleteStamina()
+    {
+        while (Keyboard.current.shiftKey.isPressed && hungerBar > 0)
+        {
+            hungerBar--;
+            yield return new WaitForSeconds(1);
+        }
+
+        sprintCalled = false;
+    }
 
     private void Update()
     {
         // Read raw input each frame
         moveInput = moveAction.ReadValue<Vector2>();
-        if (moveInput != Vector2.zero)
+        
+
+        if(Keyboard.current.shiftKey.isPressed && hungerBar > 0 && moveInput != Vector2.zero)
         {
+            anim.SetBool("walking", false);
+            pam.PlaySound(SoundClip.RUNNING);
+            moveSpeed = 8f;
+
+            if (!sprintCalled)
+            {
+                sprintCalled = true;
+                StartCoroutine(DepleteStamina());
+            }
+        }
+        else if (moveInput != Vector2.zero)
+        {
+            moveSpeed = 2.8f;
             pam.PlaySound(SoundClip.WALKING);
             anim.SetBool("walking", true);
         }
@@ -46,11 +77,21 @@ public class PlayerMovement : MonoBehaviour
         {
             pam.StopSound(SoundClip.WALKING);
             anim.SetBool("walking", false);
-            
         }
-        
-    }
 
+        if(moveSpeed > 6)
+        {
+            Camera.main.fieldOfView = 50;
+            anim.SetBool("walking", false);
+            anim.SetBool("running", true);
+        }
+        else
+        {
+            Camera.main.fieldOfView = 40;
+            anim.SetBool("running", false);
+        }
+
+    }
     private void FixedUpdate()
     {
         Vector3 direction = (transform.forward * moveInput.y) + (transform.right * moveInput.x);

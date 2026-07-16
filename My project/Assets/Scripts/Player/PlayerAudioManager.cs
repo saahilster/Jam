@@ -5,6 +5,7 @@ using UnityEngine;
 public enum SoundClip
 {
     WALKING,
+    RUNNING,
     BREATHING,
     HEARTBEAT
 }

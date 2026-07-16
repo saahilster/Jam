@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.18867922, g: 0.14836238, b: 0.05428977, a: 1}
   m_FogMode: 2
   m_FogDensity: 1
@@ -803,6 +803,7 @@ MonoBehaviour:
   source: {fileID: 43289690}
   clips:
   - {fileID: 8300000, guid: 3b039d0374dbcee4d853d5062594d7f3, type: 3}
+  - {fileID: 8300000, guid: 3afbdfca2fa311641b4eb4fb2835091d, type: 3}
   state: 0
 --- !u!1001 &45290596
 PrefabInstance:
@@ -8537,7 +8538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526186915}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33337,7 +33338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 44.589, y: 0, z: 6.619}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 208.5, y: -327.9913}
+  m_AnchoredPosition: {x: 472, y: -390}
   m_SizeDelta: {x: 1114.4126, y: 657.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048907854
@@ -35079,6 +35080,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2048907856}
     - target: {fileID: 3736462372604834979, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
+      propertyPath: hungerBar
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736462372604834979, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: moveSpeed
       value: 2.8
       objectReference: {fileID: 0}
@@ -35297,8 +35302,8 @@ SceneRoots:
   - {fileID: 1494738445}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 7436898668632358732}
   - {fileID: 526186916}
+  - {fileID: 7436898668632358732}
   - {fileID: 1665945323}
   - {fileID: 555996221}
   - {fileID: 610254376}
