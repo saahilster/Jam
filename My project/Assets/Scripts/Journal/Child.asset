@@ -17,4 +17,4 @@ MonoBehaviour:
     it's mask and not the monster. God please have mercy on all fools who tread here.
   number: 0
   image: {fileID: 0}
-  playerResponse: another monster? good god man.
+  playerResponse: ' '

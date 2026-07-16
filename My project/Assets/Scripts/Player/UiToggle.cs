@@ -14,6 +14,8 @@ public class UiToggle : MonoBehaviour
     {
         JournalCanvas.SetActive(false);
         input = new InputSystem_Actions();
+        Cursor.visible = toggled;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void OnEnable()
@@ -42,20 +44,5 @@ public class UiToggle : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-    }
-
-    void Update()
-    {
-        // JournalCanvas.SetActive(toggled);
-        // Cursor.visible = toggled;
-
-        // if (toggled)
-        // {
-        //     Cursor.lockState = CursorLockMode.None;
-        // }
-        // else
-        // {
-        //     Cursor.lockState = CursorLockMode.Locked;
-        // }
     }
 }

@@ -19,3 +19,4 @@ MonoBehaviour:
     opressors hid from your eyes.
   number: 333
   image: {fileID: 0}
+  playerResponse: ' '

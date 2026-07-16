@@ -17,6 +17,6 @@ public class SoundEvent : MonoBehaviour
 
     public void BackGroundMusic()
     {
-        soundManager.PlaySound(SourceDest.MUSIC, Sounds.CAVE_THEME, 0.2f);
+        soundManager.PlaySound(SourceDest.MUSIC, Sounds.CAVE_THEME, 0.7f);
     }
 }

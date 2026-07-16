@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821cd0f35713cf4d90f8aa378a0247a, type: 3}
   m_Name: CryingWoman2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTriggers
-  dialogue: I shouldn't have taken that arranged marriage. I'm so sorry to have left
-    you Rumi. I'll make it right to you once I leave this place
+  dialogue: I wish it was you.. Rumi

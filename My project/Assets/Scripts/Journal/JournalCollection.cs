@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class JournalCollection : MonoBehaviour
 {
-    public int currentIndex = 0;
-    [SerializeField] List<JournalSO> journalEntries = new List<JournalSO> {};
+    public int currentIndex = -1;
+    [SerializeField] public List<JournalSO> journalEntries = new List<JournalSO> {};
     [SerializeField] TextMeshProUGUI entryTitle;
     [SerializeField] TextMeshProUGUI entryBody;
     [SerializeField] TextMeshProUGUI entryCount;
@@ -53,5 +53,10 @@ public class JournalCollection : MonoBehaviour
             currentIndex--;
         }
         
+    }
+
+    public void GoToPage()
+    {
+        currentIndex = journalEntries.Count - 1;
     }
 }

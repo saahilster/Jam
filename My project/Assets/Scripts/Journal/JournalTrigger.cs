@@ -40,7 +40,7 @@ public class JournalTrigger : MonoBehaviour
             StartCoroutine(ActivationTime(2f, uiNoti));
             StartCoroutine(ActivationTime(7f, responseUI));
             responseText.text = entry.playerResponse;
-            manager.PrintCollection();
+            manager.GoToPage();
         }
     }
 }

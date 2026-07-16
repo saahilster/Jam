@@ -16,4 +16,4 @@ MonoBehaviour:
   entry: Remeber.... that.
   number: 0
   image: {fileID: 0}
-  playerResponse: what the hell!?
+  playerResponse: ' '

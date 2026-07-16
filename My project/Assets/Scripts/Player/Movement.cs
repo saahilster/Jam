@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private PlayerAudioManager pam;
+    [SerializeField] private Animator anim;
 
     [Header("Input")]
     private InputSystem_Actions input;
@@ -39,10 +40,13 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             pam.PlaySound(SoundClip.WALKING);
+            anim.SetBool("walking", true);
         }
         else
         {
             pam.StopSound(SoundClip.WALKING);
+            anim.SetBool("walking", false);
+            
         }
         
     }

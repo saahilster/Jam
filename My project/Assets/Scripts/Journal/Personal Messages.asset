@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Personal Messages
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
   title: Not an average catacomb.
-  entry: It seems like the walls here change messages. My brother said the wall said
-    infertility, but I didn't see that at all? For me it said death. Just what the
-    hell is at play here.
+  entry: It seems like the walls here change messages. My brother said the wall showed
+    a picture of our mom, but I didn't see that at all? For me it said death. Just
+    what the hell is at play here.
   number: 0
   image: {fileID: 0}
-  playerResponse: I need to see no way. I wonder were the paintings on the wall specific
-    to me?
+  playerResponse: ' '

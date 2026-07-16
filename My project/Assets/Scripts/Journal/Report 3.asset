@@ -16,4 +16,4 @@ MonoBehaviour:
   entry: I can't move. my legs are completely useless. I want to move- but I can't.
   number: 0
   image: {fileID: 0}
-  playerResponse: sounds bitch made to me.
+  playerResponse: ' '
