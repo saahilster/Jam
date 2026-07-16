@@ -21,9 +21,14 @@ MonoBehaviour:
   fieldOfViewAngle: 45
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   lostInterestTime: 5
+  chaseLoseDuration: 0
+  hearingRadius: 0
+  micThreshhold: 0
+  searchDuration: 10.12
   damageToPlayer: 5
+  detectionType: 0
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
