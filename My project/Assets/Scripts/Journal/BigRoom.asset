@@ -17,4 +17,4 @@ MonoBehaviour:
     find it.
   number: 0
   image: {fileID: 0}
-  playerResponse: Sounds useful. Probably can help me dig out some buried rocks.
+  playerResponse: ' '

@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a1143ee683302f4aa628c052723efc1, type: 2}
+  - {fileID: -876546973899608171, guid: bde135b320597544b9ac325092409f8b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 874328735621607658}
   - component: {fileID: 3632371464958046865}
   - component: {fileID: 3477854805194753862}
+  - component: {fileID: 536177195179741591}
   m_Layer: 0
   m_Name: JournalTrigger
   m_TagString: Untagged
@@ -221,3 +222,16 @@ MonoBehaviour:
   responseText: {fileID: 0}
   entry: {fileID: 11400000, guid: 0804428754f7bb243bfb9f54df6f4b83, type: 2}
   manager: {fileID: 0}
+--- !u!114 &536177195179741591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771970215193386656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ada57af234d149b29d4fd374e5d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  rotationThreshhold: 20

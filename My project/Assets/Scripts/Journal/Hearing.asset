@@ -19,4 +19,4 @@ MonoBehaviour:
     game.
   number: 0
   image: {fileID: 0}
-  playerResponse: Thankfully my ears aren't shot.
+  playerResponse: ' '

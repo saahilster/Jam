@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821cd0f35713cf4d90f8aa378a0247a, type: 3}
   m_Name: Arhcaefructus1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTriggers
-  dialogue: Wow. Those remind me of her- I miss her so much.. I wish I could have
-    changed things.
+  dialogue: Those are her favorite flowers.. I miss her.

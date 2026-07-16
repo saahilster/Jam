@@ -18,4 +18,4 @@ MonoBehaviour:
     thirst, above all else scared.
   number: 0
   image: {fileID: 0}
-  playerResponse: 
+  playerResponse: ' '

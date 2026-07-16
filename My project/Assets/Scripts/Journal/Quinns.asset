@@ -16,4 +16,4 @@ MonoBehaviour:
   entry: Light the walls and she will answer. The only way out is with her.
   number: 2
   image: {fileID: 0}
-  playerResponse: Hmm. intriguing..
+  playerResponse: ' '
