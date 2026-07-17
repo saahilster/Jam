@@ -75,19 +75,21 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            moveSpeed = 2.8f;
             pam.StopSound(SoundClip.WALKING);
             anim.SetBool("walking", false);
         }
 
+
         if(moveSpeed > 6)
         {
-            Camera.main.fieldOfView = 50;
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, 3 * Time.deltaTime);
             anim.SetBool("walking", false);
             anim.SetBool("running", true);
         }
         else
         {
-            Camera.main.fieldOfView = 40;
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 40, 3 * Time.deltaTime);
             anim.SetBool("running", false);
         }
 
