@@ -218,8 +218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalTrigger
   uiNoti: {fileID: 0}
-  responseUI: {fileID: 0}
-  responseText: {fileID: 0}
   entry: {fileID: 11400000, guid: 0804428754f7bb243bfb9f54df6f4b83, type: 2}
   manager: {fileID: 0}
 --- !u!114 &536177195179741591

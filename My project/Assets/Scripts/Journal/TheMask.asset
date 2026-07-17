@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
-  m_Name: Possible Escape
+  m_Name: TheMask
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
-  title: Possible Escape
-  entry: Up ahead this long narrow hallway. Beware of what lurks. our team was taken
-    out one by one. I am writing this as my vision blurs. There is a crack between
-    walls with an oddly placed chair and a crimson floor. For those who come after-
-    solve the mysteries of the catacombs.
+  title: Doomed to suffering.
+  entry: for the teams that read this note. It is too late. No man should wield the
+    mask. For it has the power to-

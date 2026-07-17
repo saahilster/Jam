@@ -9,13 +9,11 @@ public class JournalCollection : MonoBehaviour
     [SerializeField] public List<JournalSO> journalEntries = new List<JournalSO> {};
     [SerializeField] TextMeshProUGUI entryTitle;
     [SerializeField] TextMeshProUGUI entryBody;
-    [SerializeField] TextMeshProUGUI entryCount;
 
     void FixedUpdate()
     {
         entryTitle.text = journalEntries[currentIndex].title;
         entryBody.text = journalEntries[currentIndex].entry;
-        entryCount.text = journalEntries[currentIndex].number.ToString();
     }
 
     public void AddToCollection(JournalSO entry)

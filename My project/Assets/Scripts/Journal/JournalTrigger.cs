@@ -8,8 +8,6 @@ public class JournalTrigger : MonoBehaviour
 
 
     [SerializeField] private GameObject uiNoti;
-    [SerializeField] private GameObject responseUI;
-    [SerializeField] private TextMeshProUGUI responseText;
 
     [SerializeField] private JournalSO entry;
     [SerializeField] private JournalCollection manager;
@@ -17,7 +15,6 @@ public class JournalTrigger : MonoBehaviour
     void Awake()
     {
         uiNoti.SetActive(false);
-        responseUI.SetActive(false);
     }
     IEnumerator ActivationTime(float time, GameObject ui)
     {
@@ -38,8 +35,6 @@ public class JournalTrigger : MonoBehaviour
             }
             manager.AddToCollection(entry);
             StartCoroutine(ActivationTime(2f, uiNoti));
-            StartCoroutine(ActivationTime(7f, responseUI));
-            responseText.text = entry.playerResponse;
             manager.GoToPage();
         }
     }

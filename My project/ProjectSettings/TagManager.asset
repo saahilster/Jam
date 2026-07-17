@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Trigger
   - Mask
+  - Snack
   layers:
   - Default
   - TransparentFX

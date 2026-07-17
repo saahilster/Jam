@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Diagnostics.CodeAnalysis;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private PlayerAudioManager pam;
     [SerializeField] private Animator anim;
+    private bool breatheCall;
     private bool sprintCalled;
     public int hungerBar = 5;
 
@@ -49,16 +47,12 @@ public class PlayerMovement : MonoBehaviour
         sprintCalled = false;
     }
 
-    private void Update()
+    private void MovementState()
     {
-        // Read raw input each frame
-        moveInput = moveAction.ReadValue<Vector2>();
-        
-
         if(Keyboard.current.shiftKey.isPressed && hungerBar > 0 && moveInput != Vector2.zero)
         {
             anim.SetBool("walking", false);
-            pam.PlaySound(SoundClip.RUNNING);
+            pam.PlaySound(SoundClip.RUNNING, pam.source, 0.4f);
             moveSpeed = 8f;
 
             if (!sprintCalled)
@@ -70,13 +64,13 @@ public class PlayerMovement : MonoBehaviour
         else if (moveInput != Vector2.zero)
         {
             moveSpeed = 2.8f;
-            pam.PlaySound(SoundClip.WALKING);
+            pam.PlaySound(SoundClip.WALKING, pam.source, 0.8f);
             anim.SetBool("walking", true);
         }
         else
         {
             moveSpeed = 2.8f;
-            pam.StopSound(SoundClip.WALKING);
+            pam.StopSound(pam.source);
             anim.SetBool("walking", false);
         }
 
@@ -92,12 +86,38 @@ public class PlayerMovement : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 40, 3 * Time.deltaTime);
             anim.SetBool("running", false);
         }
+    }
 
+    private void Update()
+    {
+        // Read raw input each frame
+        moveInput = moveAction.ReadValue<Vector2>();
+        MovementState();
+// && moveInput == Vector2.zero
+        Debug.Log(moveInput);
+        if(hungerBar == 0 )
+        {
+            Debug.Log("i hunger");
+            pam.PlaySound(SoundClip.BREATHING, pam.src2, 0.35f);
+        }
+        // else
+        // {
+        //     pam.StopSound(pam.src2);
+        // }
     }
     private void FixedUpdate()
     {
         Vector3 direction = (transform.forward * moveInput.y) + (transform.right * moveInput.x);
         Vector3 velocity = direction * moveSpeed;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Snack") && hungerBar < 5)
+        {
+            Debug.Log("I ate the bar");
+            hungerBar++;
+        }
     }
 }

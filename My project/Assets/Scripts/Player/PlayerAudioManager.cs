@@ -12,7 +12,8 @@ public enum SoundClip
 
 public class PlayerAudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource source;
+    [SerializeField] public AudioSource source;
+    [SerializeField] public AudioSource src2;
     [SerializeField] List<AudioClip> clips = new List<AudioClip>{};
 
     public SoundClip state;
@@ -29,19 +30,20 @@ public class PlayerAudioManager : MonoBehaviour
         
     }
 
-    public void PlaySound(SoundClip clip)
+    public void PlaySound(SoundClip clip, AudioSource src, float vol)
     {
         int val = (int)clip;
-        source.clip = clips[val];
+        src.clip = clips[val];
+        src.volume = vol;
         if (!source.isPlaying)
         {
-            source.Play();
+            Debug.Log(clip + "is playing");
+            src.Play();
         }
     }
-    public void StopSound(SoundClip clip)
+    public void StopSound(AudioSource src)
     {
-        int val = (int)clip;
-        source.Stop();
+        src.Stop();
     }
 
 
