@@ -18,16 +18,16 @@ MonoBehaviour:
   chaseSpeed: 3
   searchSpeed: 2.6
   movementType: 0
-  detectionRadius: 19.4
+  detectionRadius: 10.7
   fieldOfViewAngle: 45
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  lostInterestTime: 25
-  chaseLoseDuration: 3.3
-  hearingRadius: 15.02
+  lostInterestTime: 4
+  chaseLoseDuration: 6.23
+  hearingRadius: 10.4
   micThreshhold: 0.03
-  searchDuration: 25
+  searchDuration: 3.6
   damageToPlayer: 5
   detectionType: 1
   minSearchDistance: 6.22

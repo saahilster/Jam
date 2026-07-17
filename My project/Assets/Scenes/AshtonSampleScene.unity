@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.10333333
+  m_VoxelSize: 0.11000001
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
@@ -1960,9 +1960,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.10333333
+  m_VoxelSize: 0.11000001
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 7ce28ac3ad2258f4d81866ec5675fb4e, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1545387714
 GameObject:
@@ -8914,7 +8914,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7476248976340962253}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.76
   m_Speed: 3.5
   m_Acceleration: 50
   avoidancePriority: 50
@@ -10560,7 +10560,7 @@ Transform:
   m_GameObject: {fileID: 6467238959019920401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.35, y: 1.31, z: 55.15}
+  m_LocalPosition: {x: -29.37, y: 1.31, z: 55.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11536,6 +11536,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: f16ade8ab75a6ad47a49f97aa1a49c4b, type: 2}
   player: {fileID: 4770571400261460768}
   patrolPointsParent: {fileID: 2081727534}
+  teleportPointsParent: {fileID: 0}
   floorMask:
     serializedVersion: 2
     m_Bits: 256
@@ -15727,6 +15728,7 @@ GameObject:
   - component: {fileID: 3658849166179205966}
   - component: {fileID: 5112162204123690474}
   - component: {fileID: 5301421778813011612}
+  - component: {fileID: 8623621111117469221}
   m_Layer: 0
   m_Name: EnemyController
   m_TagString: Untagged
@@ -17982,6 +17984,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7020694807847995776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8623621111117469221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476248976340962253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.09, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &8624737118209150062
 MeshRenderer:
   m_ObjectHideFlags: 0

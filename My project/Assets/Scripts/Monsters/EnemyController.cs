@@ -9,8 +9,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyData enemyData;
     [SerializeField] private Transform player;
     [SerializeField] private Transform patrolPointsParent;
+    [SerializeField] private Transform teleportPointsParent;
     [SerializeField] private LayerMask floorMask;
     private Transform[] patrolPoints;
+    private Transform[] teleportPoints;
 
     private NavMeshAgent agent;
     private MovementBehavior currentMovement;
@@ -21,6 +23,7 @@ public class EnemyController : MonoBehaviour
 
     private DetectionBehavior detectionBehavior;
     private DetectionBehavior chaseTracking;
+    private PatrolMovement patrolMovement;
 
     public MicListener micListener;
     public Transform Player => player;
@@ -36,7 +39,13 @@ public class EnemyController : MonoBehaviour
         {
             patrolPoints[i] = patrolPointsParent.GetChild(i);
         }
-        currentMovement = new PatrolMovement(patrolPoints);
+        teleportPoints = new Transform[teleportPointsParent.childCount];
+        for (int i = 0; i < teleportPointsParent.childCount; i++)
+        {
+            teleportPoints[i] = teleportPointsParent.GetChild(i);
+        }
+        patrolMovement = new PatrolMovement(patrolPoints);
+        currentMovement = patrolMovement;
         detectionBehavior = GetDetectionBehavior(enemyData.detectionType);
         chaseTracking = new SightDetection();
         //agent.updateRotation = false;
@@ -111,6 +120,16 @@ public class EnemyController : MonoBehaviour
         currentMovement.Move(agent, transform, player, enemyData);
         Debug.Log(currentState);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Caught player");
+            TeleportRandom();
+            currentState = State.Patrol;
+            currentMovement = GetMovementForState(currentState);
+        }
+    }
     private void SetMovement(MovementBehavior newMovement)
     {
         currentMovement = newMovement;
@@ -138,7 +157,7 @@ public class EnemyController : MonoBehaviour
         {
             case State.Chase: return new ChaseMovement();
             case State.Search: return new SearchMovement(GetRoomBounds(lastKnownPosition));
-            case State.Patrol: return new PatrolMovement(patrolPoints);
+            case State.Patrol: return patrolMovement;
             default: return new PatrolMovement(patrolPoints);
         }
     }
@@ -170,5 +189,10 @@ public class EnemyController : MonoBehaviour
         Collider room = GetRoomFloor(position, floorMask);
         if (room != null) return room.bounds;
         return new Bounds(position, Vector3.one * 5f);
+    }
+    private void TeleportRandom()
+    {
+        int index = Random.Range(0, teleportPoints.Length);
+        agent.Warp(patrolPoints[index].position);
     }
 }
