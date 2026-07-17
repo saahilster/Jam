@@ -23,7 +23,6 @@ public class MicListener : MonoBehaviour
     {
         if (!isRecording || micClip == null) return;
         currentVolume = CalculateVolume();
-        Debug.Log(currentVolume);
     }
 
     public void SetDevice(string deviceName)

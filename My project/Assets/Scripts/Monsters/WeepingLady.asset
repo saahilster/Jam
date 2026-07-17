@@ -14,21 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: WeepingLady
   enemySprite: {fileID: 21300000, guid: f2f6e074452244f46ba43676d175251e, type: 3}
-  patrolSpeed: 2
-  chaseSpeed: 2
+  patrolSpeed: 2.6
+  chaseSpeed: 3
+  searchSpeed: 2.6
   movementType: 0
-  detectionRadius: 20
+  detectionRadius: 19.4
   fieldOfViewAngle: 45
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  lostInterestTime: 5
-  chaseLoseDuration: 0
-  hearingRadius: 0
-  micThreshhold: 0
-  searchDuration: 10.12
+  lostInterestTime: 25
+  chaseLoseDuration: 3.3
+  hearingRadius: 15.02
+  micThreshhold: 0.03
+  searchDuration: 25
   damageToPlayer: 5
-  detectionType: 0
+  detectionType: 1
+  minSearchDistance: 6.22
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}

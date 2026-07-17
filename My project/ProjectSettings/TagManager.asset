@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Trigger
   - Mask
+  - Room
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Objects
-  - 
-  - 
+  - Room
+  - Floor
   - 
   - 
   - 
