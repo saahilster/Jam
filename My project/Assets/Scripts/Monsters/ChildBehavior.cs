@@ -56,9 +56,9 @@ public class ChildBehavior : MonoBehaviour
             case State.Flee:
                 if (!agent.hasPath)
                 {
-                agent.SetDestination(waypoints[index].position);
+                    agent.SetDestination(waypoints[index].position);
                 }
-                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.hasPath && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
                     index = (index + 1) % waypoints.Length;
                     currentState = State.Waiting;

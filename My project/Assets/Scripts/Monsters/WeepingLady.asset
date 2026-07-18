@@ -27,7 +27,7 @@ MonoBehaviour:
   chaseLoseDuration: 6.23
   hearingRadius: 10.4
   micThreshhold: 0.03
-  searchDuration: 3.6
+  searchDuration: 15.9
   damageToPlayer: 5
   detectionType: 1
   minSearchDistance: 6.22

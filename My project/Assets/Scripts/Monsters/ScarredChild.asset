@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad80d7c375beb1d45a6f742a22df9ce2, type: 3}
   m_Name: ScarredChild
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: 
+  enemyName: ScarredChild
   enemySprite: {fileID: 0}
-  patrolSpeed: 0
+  patrolSpeed: 50
   chaseSpeed: 0
   searchSpeed: 0
   movementType: 0
