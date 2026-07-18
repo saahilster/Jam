@@ -11,7 +11,7 @@ public class SearchMovement : MovementBehavior
     private Bounds roomBounds;
 
 
-
+    //Make sure to set waypoint at entrance of room
     public SearchMovement(Bounds roomBounds)
     {
         this.roomBounds = roomBounds;

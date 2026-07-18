@@ -108,7 +108,7 @@ public class EnemyController : MonoBehaviour
                     currentState = State.Chase;
                     currentMovement = GetMovementForState(currentState);
                 }
-                else if (searchTimer >= enemyData.lostInterestTime)
+                else if (searchTimer >= enemyData.searchDuration)
                 {
                     Debug.Log("Lost Player");
                     currentState = State.Patrol;
