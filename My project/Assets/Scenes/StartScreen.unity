@@ -2676,8 +2676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 72.48}
-  m_SizeDelta: {x: 640.0869, y: 504.6845}
+  m_AnchoredPosition: {x: 14.3331, y: -49.3269}
+  m_SizeDelta: {x: 656.7532, y: 748.2982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465008946
 MonoBehaviour:
@@ -2714,6 +2714,19 @@ MonoBehaviour:
 
     Assets Used (Creative
     Commons License)
+
+
+    SFX : Alexander Jauk, Aman Kumar, freesound_community,
+    Jurij, Jusatti890, Otto, rishabh gupta, u_edphcbxwje, Universfield
+
+
+    rock
+    assets - Joe McDowell
+
+    pile of skulls - Abimael Gonzalez
+
+    wooden chair
+    - XOIAL
 
 '
   m_isRightToLeft: 0
