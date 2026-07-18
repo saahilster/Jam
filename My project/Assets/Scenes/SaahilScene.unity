@@ -7098,7 +7098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8156863}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17414,7 +17414,7 @@ PrefabInstance:
       objectReference: {fileID: 1367766754}
     - target: {fileID: 3809204450057533733, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.08
+      value: 10.75
       objectReference: {fileID: 0}
     - target: {fileID: 3809204450057533733, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17422,7 +17422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3809204450057533733, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.61
+      value: 52.89
       objectReference: {fileID: 0}
     - target: {fileID: 3809204450057533733, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17467,7 +17467,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1651818670296251203, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961827145}
   m_SourcePrefab: {fileID: 100100000, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
 --- !u!4 &997758208 stripped
 Transform:
@@ -23599,7 +23602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1494738442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32529,6 +32532,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961327077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1961827142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1651818670296251203, guid: 42b91d72c3136f94bbc7de0e76ea7c98, type: 3}
+  m_PrefabInstance: {fileID: 997758207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961827145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961827142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ada57af234d149b29d4fd374e5d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  rotationThreshhold: 20
+  target: {fileID: 0}
 --- !u!1 &1962704487
 GameObject:
   m_ObjectHideFlags: 0
@@ -36164,7 +36186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.2
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36172,7 +36194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.38
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalRotation.w
