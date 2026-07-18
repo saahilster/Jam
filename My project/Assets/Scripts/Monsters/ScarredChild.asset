@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: ScarredChild
   enemySprite: {fileID: 0}
-  patrolSpeed: 50
+  patrolSpeed: 30.2
   chaseSpeed: 0
   searchSpeed: 0
   movementType: 0
