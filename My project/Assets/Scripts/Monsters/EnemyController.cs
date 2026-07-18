@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform patrolPointsParent;
     [SerializeField] private Transform teleportPointsParent;
     [SerializeField] private LayerMask floorMask;
+    [SerializeField] private EnemySpriteAnimator spriteAnimator;
     private Transform[] patrolPoints;
     private Transform[] teleportPoints;
 
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
     public Transform Player => player;
     public EnemyData Data => enemyData;
     public MicListener Mic => micListener;
+    
 
     void Awake()
     {
@@ -60,12 +62,15 @@ public class EnemyController : MonoBehaviour
         }
         Debug.Log(detectionBehavior);
         Debug.Log(currentState);
+        spriteAnimator.Initialize(enemyData);
+
     }
     void Update()
     {
         switch (currentState)
         {
             case State.Patrol:
+                spriteAnimator.SetState(currentState);
                 if (detectionBehavior.CanDetectPlayer(this))
                 {
                     Debug.Log("Detected Player");
@@ -85,6 +90,7 @@ public class EnemyController : MonoBehaviour
                 }
                 break;
             case State.Chase:
+                spriteAnimator.SetState(currentState);
                 if (chaseTracking.CanDetectPlayer(this))
                 {
                     Debug.Log("Chasing Player");
@@ -101,6 +107,7 @@ public class EnemyController : MonoBehaviour
                 break;
             case State.Search:
                 searchTimer += Time.deltaTime;
+                spriteAnimator.SetState(currentState);
                 if (detectionBehavior.CanDetectPlayer(this))
                 {
                     Debug.Log("Searching for Player");
