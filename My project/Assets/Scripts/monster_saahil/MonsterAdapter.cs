@@ -22,7 +22,7 @@ public class MonsterAdapter : MonoBehaviour
         if (tpSpots.Count <= 0)
         return;
 
-        int randInt = Random.Range(1, tpSpots.Count);
+        int randInt = Random.Range(0, tpSpots.Count - 1);
         gameObject.transform.position = tpSpots[randInt].position;
     }
 
