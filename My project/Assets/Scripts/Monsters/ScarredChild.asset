@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad80d7c375beb1d45a6f742a22df9ce2, type: 3}
-  m_Name: WeepingLady
+  m_Name: ScarredChild
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: WeepingLady
-  enemySprite: {fileID: 21300000, guid: f2f6e074452244f46ba43676d175251e, type: 3}
-  patrolSpeed: 2.6
-  chaseSpeed: 3
-  searchSpeed: 2.6
+  enemyName: ScarredChild
+  enemySprite: {fileID: 0}
+  patrolSpeed: 50
+  chaseSpeed: 0
+  searchSpeed: 0
   movementType: 0
-  detectionRadius: 10.7
-  fieldOfViewAngle: 45
+  detectionRadius: 0
+  fieldOfViewAngle: 0
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
-  lostInterestTime: 4
-  chaseLoseDuration: 6.23
-  hearingRadius: 10.4
-  micThreshhold: 0.03
-  searchDuration: 15.9
-  damageToPlayer: 5
-  detectionType: 1
-  minSearchDistance: 6.22
+    m_Bits: 0
+  lostInterestTime: 0
+  chaseLoseDuration: 0
+  hearingRadius: 0
+  micThreshhold: 0
+  searchDuration: 0
+  damageToPlayer: 0
+  detectionType: 0
+  minSearchDistance: 0
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}

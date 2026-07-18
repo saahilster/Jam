@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 public class PatrolMovement : MovementBehavior
 {
+    /// <summary>
+    /// New Method: Get waypoints, find way point that is immediate and closest to player, go to that waypoint, repeat
+    /// </summary>
     private Transform[] waypoints;
     private int currentIndex;
     public PatrolMovement(Transform[] waypoints)
