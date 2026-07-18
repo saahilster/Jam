@@ -17247,7 +17247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAudioManag
   source: {fileID: 955901690}
   src2: {fileID: 0}
-  clips: []
+  clips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   state: 0
 --- !u!1 &957984368
 GameObject:

@@ -16,7 +16,7 @@ public class EnemyAudioManag : MonoBehaviour
     [SerializeField] public AudioSource src2;
     [SerializeField] List<AudioClip> clips = new List<AudioClip>{};
 
-    public SoundClip state;
+    public EnemySoundClip state;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +30,7 @@ public class EnemyAudioManag : MonoBehaviour
         
     }
 
-    public void PlaySound(SoundClip clip, AudioSource src, float vol)
+    public void PlaySound(EnemySoundClip clip, AudioSource src, float vol)
     {
         int val = (int)clip;
         src.clip = clips[val];
