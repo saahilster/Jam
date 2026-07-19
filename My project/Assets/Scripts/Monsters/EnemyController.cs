@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform teleportPointsParent;
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private EnemySpriteAnimator spriteAnimator;
+    [SerializeField] private EnemyAudioManag audioManag;
     private Transform[] patrolPoints;
     private Transform[] teleportPoints;
 
@@ -21,6 +22,8 @@ public class EnemyController : MonoBehaviour
     private Vector3 lastKnownPosition;
     private float lastDetectionTime;
     private State currentState;
+    private float growlTimer;
+    private float roarTimer;
 
     private DetectionBehavior detectionBehavior;
     private DetectionBehavior chaseTracking;
@@ -79,6 +82,7 @@ public class EnemyController : MonoBehaviour
                     currentMovement = GetMovementForState(currentState);
                     searchTimer = 0f;
                     lastDetectionTime = Time.time;
+                    audioManag.StopSound(audioManag.source);
                 }
                 else if (IsInSameRoomAsPlayer())
                 {
@@ -88,9 +92,28 @@ public class EnemyController : MonoBehaviour
                     currentMovement = GetMovementForState(currentState);
                     searchTimer = 0f;
                 }
+                //sound
+                if (agent.velocity.magnitude != 0)
+                {
+                    audioManag.PlaySound(EnemySoundClip.Walking, audioManag.src2, 0.6f);
+                }
+                else
+                {
+                    audioManag.StopSound(audioManag.src2);
+                }
+                if (growlTimer >= 6f)
+                {
+                    audioManag.PlaySound(EnemySoundClip.Growl, audioManag.source, 0.6f);
+                    growlTimer = Time.deltaTime;
+                }
+                else
+                {
+                    growlTimer += Time.deltaTime;
+                }
                 break;
             case State.Chase:
                 spriteAnimator.SetState(currentState);
+                
                 if (chaseTracking.CanDetectPlayer(this))
                 {
                     Debug.Log("Chasing Player");
@@ -104,6 +127,16 @@ public class EnemyController : MonoBehaviour
                     currentMovement = GetMovementForState(currentState);
                     searchTimer = 0f;
                 }
+                if (roarTimer >= 4.5f)
+                {
+                    audioManag.PlaySound(EnemySoundClip.Roar, audioManag.source, 0.6f);
+                    roarTimer = 0f;
+                }
+                else
+                {
+                    roarTimer += Time.time;
+                }
+                audioManag.PlaySound(EnemySoundClip.Chase, audioManag.src2, 0.6f);
                 break;
             case State.Search:
                 searchTimer += Time.deltaTime;
@@ -114,6 +147,7 @@ public class EnemyController : MonoBehaviour
                     lastKnownPosition = player.position;
                     currentState = State.Chase;
                     currentMovement = GetMovementForState(currentState);
+                    audioManag.PlaySound(EnemySoundClip.Roar, audioManag.source, 0.6f);
                 }
                 else if (searchTimer >= enemyData.searchDuration)
                 {
@@ -122,20 +156,20 @@ public class EnemyController : MonoBehaviour
                     currentMovement = GetMovementForState(currentState);
                     searchTimer = 0f;
                 }
+                //sound
+                if (agent.velocity.magnitude != 0)
+                {
+                    audioManag.PlaySound(EnemySoundClip.Walking, audioManag.src2, 0.6f);
+                }
+                else
+                {
+                    audioManag.StopSound(audioManag.src2);
+                }
                 break;
         }
+
         currentMovement.Move(agent, transform, player, enemyData);
         Debug.Log(currentState);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Caught player");
-            TeleportRandom();
-            currentState = State.Patrol;
-            currentMovement = GetMovementForState(currentState);
-        }
     }
     private void SetMovement(MovementBehavior newMovement)
     {
@@ -197,9 +231,11 @@ public class EnemyController : MonoBehaviour
         if (room != null) return room.bounds;
         return new Bounds(position, Vector3.one * 5f);
     }
-    private void TeleportRandom()
+    public void TeleportRandom()
     {
         int index = Random.Range(0, teleportPoints.Length);
         agent.Warp(patrolPoints[index].position);
+        currentState = State.Patrol;
+        currentMovement = GetMovementForState(currentState);
     }
 }

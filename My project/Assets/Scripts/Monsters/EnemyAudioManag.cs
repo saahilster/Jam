@@ -5,8 +5,9 @@ using UnityEngine;
 public enum EnemySoundClip
 {
     Walking,
+    Growl,
+    Chase,
     Roar,
-    Crying,
     Music
 }
 
@@ -35,7 +36,7 @@ public class EnemyAudioManag : MonoBehaviour
         int val = (int)clip;
         src.clip = clips[val];
         src.volume = vol;
-        if (!source.isPlaying)
+        if (!src.isPlaying)
         {
             Debug.Log(clip + "is playing");
             src.Play();

@@ -94,8 +94,8 @@ Transform:
   m_GameObject: {fileID: 2586614982720626364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34, z: 0}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalPosition: {x: 2.32, y: 0.34, z: 0.11}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 465324332833136297}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3401199643096004342}
   - component: {fileID: 2806781962260839665}
-  - component: {fileID: 7703461185047945487}
+  - component: {fileID: 7644542587737472261}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &7703461185047945487
+--- !u!114 &7644542587737472261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5804512769909003560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728ada57af234d149b29d4fd374e5d77, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e12acf4683b5214ca1942a78d4e784b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Billboard
-  rotationThreshhold: 35
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBillboard
+  rotationThreshhold: 20
   target: {fileID: 465324332833136297}

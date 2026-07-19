@@ -36,6 +36,7 @@ public class EnemyData : ScriptableObject
     public Sprite[] walkFrames;
     public Sprite[] chaseFrames;
     public float animationFrameRate;
+    public float animationWalkFrameRate;
 }
 
 public enum MovementType { Patrol, Chase, Flee, Search}

@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpriteAnimator : MonoBehaviour
 {
+    [SerializeField] NavMeshAgent agent;
     private EnemyData enemyData;
     private SpriteRenderer spriteRenderer;
     private State currentState;
@@ -36,9 +38,14 @@ public class EnemySpriteAnimator : MonoBehaviour
             int frameIndex = Mathf.FloorToInt(Time.time / enemyData.animationFrameRate) % enemyData.chaseFrames.Length;
             spriteRenderer.sprite = enemyData.chaseFrames[frameIndex];
         }
-        else
+        if (currentState == State.Patrol || currentState == State.Search)
         {
-            spriteRenderer.sprite = enemyData.enemySprite;
+            if (agent.velocity.magnitude != 0f)
+            {
+                int frameWalkIndex = Mathf.FloorToInt(Time.time / enemyData.animationWalkFrameRate) % enemyData.walkFrames.Length;
+                spriteRenderer.sprite = enemyData.walkFrames[frameWalkIndex];
+            }
         }
     }
 }
+
