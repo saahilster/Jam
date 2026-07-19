@@ -16,6 +16,5 @@ public class PlayJumpscare : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         canvas.SetActive(false);
-        audioManag.StopSound(audioManag.source);
     }
 }
