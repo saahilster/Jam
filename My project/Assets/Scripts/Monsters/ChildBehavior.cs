@@ -48,7 +48,7 @@ public class ChildBehavior : MonoBehaviour
         switch (currentState)
         {
             case State.Waiting:
-                if (IsBeingObserved())
+                if (!IsBeingObserved())
                 {
                     lookTimer += Time.deltaTime;
                 }
@@ -61,9 +61,12 @@ public class ChildBehavior : MonoBehaviour
                     //Insert trigger effect
                     TriggerEffect();
                     lookTimer = 0f;
+                    currentState = State.Flee;
                 }
+                Debug.Log(currentState);
                 break;
             case State.Flee:
+                audioManag.PlaySound(EnemySoundClip.Chase, audioManag.source, 0.6f);
                 if (!agent.hasPath)
                 {
                     agent.SetDestination(waypoints[index].position);
@@ -73,6 +76,7 @@ public class ChildBehavior : MonoBehaviour
                     index = (index + 1) % waypoints.Length;
                     currentState = State.Waiting;
                 }
+                Debug.Log(currentState);
                 break;
 
         }
@@ -90,6 +94,7 @@ public class ChildBehavior : MonoBehaviour
 
         if (Physics.Raycast(playerCam.position, dirToChild.normalized, out RaycastHit hit, distance, obstructionMask))
         {
+            Debug.Log("Being Looked at");
             return false;
         }
 
