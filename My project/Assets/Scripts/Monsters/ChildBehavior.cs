@@ -12,6 +12,7 @@ public class ChildBehavior : MonoBehaviour
     [SerializeField] private float viewAngle = 30f;
     [SerializeField] private EnemyAudioManag audioManag;
     [SerializeField] List<GameObject> jumpscareCanvas = new List<GameObject>{};
+    [SerializeField] private EnemyController mother;
     private PlayJumpscare jumpscare;
     private int jumpscareCounter = 0;
 
@@ -66,7 +67,6 @@ public class ChildBehavior : MonoBehaviour
                 Debug.Log(currentState);
                 break;
             case State.Flee:
-                currentState = State.Waiting;
                 audioManag.PlaySound(EnemySoundClip.Chase, audioManag.source, 0.6f);
                 if (!agent.hasPath)
                 {
@@ -87,6 +87,7 @@ public class ChildBehavior : MonoBehaviour
     {
         Vector3 dirToChild = transform.position - playerCam.position;
         float distance = dirToChild.magnitude;
+        if (distance <= 3.5f) return true;
 
         if (distance > viewDistance) return false;
 
@@ -115,6 +116,10 @@ public class ChildBehavior : MonoBehaviour
             jumpscare.TriggerJumpscare(jumpscareCanvas[1], audioManag, data.jumpscareVolume, data.jumpscareDuration);
             data.enemySprite = data.walkFrames[0];
             GetComponent<ChildBehavior>().enabled = false;
+        }
+        if (jumpscareCounter == 1)
+        {
+            mother.Activate();
         }
     }
 }   
