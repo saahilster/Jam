@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool breatheCall;
     private bool sprintCalled;
     public int hungerBar = 5;
+    [SerializeField] TextMeshProUGUI staminaDisplay;
 
     [Header("Input")]
     private InputSystem_Actions input;
@@ -90,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        staminaDisplay.text = "Stamina: " + hungerBar.ToString();
         moveInput = moveAction.ReadValue<Vector2>();
         MovementState();
         if(hungerBar == 0 )

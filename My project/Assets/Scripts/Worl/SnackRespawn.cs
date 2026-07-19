@@ -4,7 +4,7 @@ using UnityEngine;
 public class SnackRespawn : MonoBehaviour
 {
     [SerializeField] private Collider col;
-    [SerializeField] private Renderer ren;
+    [SerializeField] private GameObject ren;
 
     void Awake()
     {
@@ -15,11 +15,11 @@ public class SnackRespawn : MonoBehaviour
     {
         float spawnTime = Random.Range(4, 10);
         col.enabled = false;
-        ren.enabled = false;
+        ren.SetActive(false);
         Debug.Log(spawnTime);
         yield return new WaitForSeconds(spawnTime);
         col.enabled = true;
-        ren.enabled = true;
+        ren.SetActive(true);
         Debug.Log("Done");
     }
     void OnTriggerEnter(Collider other)
