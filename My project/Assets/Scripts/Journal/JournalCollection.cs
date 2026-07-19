@@ -7,6 +7,8 @@ public class JournalCollection : MonoBehaviour
 {
     public int currentIndex = -1;
     [SerializeField] public List<JournalSO> journalEntries = new List<JournalSO> {};
+    [SerializeField] GameObject previous;
+    [SerializeField] GameObject next;
     [SerializeField] TextMeshProUGUI entryTitle;
     [SerializeField] TextMeshProUGUI entryBody;
 
