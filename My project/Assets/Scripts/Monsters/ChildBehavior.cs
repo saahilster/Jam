@@ -111,6 +111,7 @@ public class ChildBehavior : MonoBehaviour
     private void TriggerEffect()
     {
         //Insert Effects
+        childEvent.Invoke();
         if (jumpscareCounter < 3)
         {
             //currentState = State.Flee;
