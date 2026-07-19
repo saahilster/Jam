@@ -56,9 +56,16 @@ public class EnemyController : MonoBehaviour
         detectionBehavior = GetDetectionBehavior(enemyData.detectionType);
         chaseTracking = new SightDetection();
         playJumpscare = GetComponent<PlayJumpscare>();
+        enabled = false;
         //agent.updateRotation = false;
 
 
+    }
+    public void Activate()
+    {
+        enabled = true;
+        audioManag.PlaySound(EnemySoundClip.Jumpscare, audioManag.src3, 2f);
+        TeleportRandom();
     }
     void Start()
     {
@@ -236,6 +243,10 @@ public class EnemyController : MonoBehaviour
     }
     public void TeleportRandom()
     {
+        if (enabled == false)
+        {
+            return;
+        }
         int index = Random.Range(0, teleportPoints.Length);
         agent.Warp(patrolPoints[index].position);
         currentState = State.Patrol;
@@ -243,7 +254,11 @@ public class EnemyController : MonoBehaviour
     }
     public void JumpscareWoman()
     {
+        if (enabled == false)
+        {
+            return;
+        }
         audioManag.StopSound(audioManag.source);
-        playJumpscare.TriggerJumpscare(jumpscare, audioManag , 1f, enemyData.jumpscareDuration);
+        playJumpscare.TriggerJumpscare(jumpscare, audioManag , 3f, enemyData.jumpscareDuration);
     }
 }

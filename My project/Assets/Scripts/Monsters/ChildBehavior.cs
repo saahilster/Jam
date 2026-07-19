@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-public class ChildBehavior : MonoBehaviour
+using UnityEngine.Events;
+public class ChildBehavior : MonoBehaviour 
 {
     [SerializeField] private Transform playerCam;
     [SerializeField] private Transform waypointsParent;
@@ -12,13 +12,16 @@ public class ChildBehavior : MonoBehaviour
     [SerializeField] private float viewAngle = 30f;
     [SerializeField] private EnemyAudioManag audioManag;
     [SerializeField] List<GameObject> jumpscareCanvas = new List<GameObject>{};
+    [SerializeField] private EnemyController mother;
+    [SerializeField] private SpriteRenderer child;
+    public UnityEvent childEvent;
     private PlayJumpscare jumpscare;
     private int jumpscareCounter = 0;
 
     private NavMeshAgent agent;
     private Transform[] waypoints;
     private float lookTimer;
-    private float lookDuration = 4f;
+    private float lookDuration = 2.5f;
     private State currentState;
     private int index = 0;
     private enum State {Flee, Waiting, Dead};
@@ -66,12 +69,15 @@ public class ChildBehavior : MonoBehaviour
                 Debug.Log(currentState);
                 break;
             case State.Flee:
-                currentState = State.Waiting;
                 audioManag.PlaySound(EnemySoundClip.Chase, audioManag.source, 0.6f);
                 if (!agent.hasPath)
                 {
+                    //remove
+                    bool success = agent.SetDestination(waypoints[index].position);
+                    Debug.Log($"SetDestination success={success}, isOnNavMesh={agent.isOnNavMesh}, target={waypoints[index].position}");
                     agent.SetDestination(waypoints[index].position);
                 }
+                Debug.Log($"remaining={agent.remainingDistance}, stopping={agent.stoppingDistance}, status={agent.pathStatus}, pending={agent.pathPending}, speed={agent.speed}, isStopped={agent.isStopped}");
                 if (agent.hasPath && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
                     index = (index + 1) % waypoints.Length;
@@ -87,6 +93,7 @@ public class ChildBehavior : MonoBehaviour
     {
         Vector3 dirToChild = transform.position - playerCam.position;
         float distance = dirToChild.magnitude;
+        if (distance <= 3.5f) return true;
 
         if (distance > viewDistance) return false;
 
@@ -104,17 +111,22 @@ public class ChildBehavior : MonoBehaviour
     private void TriggerEffect()
     {
         //Insert Effects
+        childEvent.Invoke();
         if (jumpscareCounter < 3)
         {
-            currentState = State.Flee;
+            //currentState = State.Flee;
             jumpscare.TriggerJumpscare(jumpscareCanvas[0], audioManag, data.jumpscareVolume, data.jumpscareDuration);
             jumpscareCounter += 1;
         }
         else
         {
             jumpscare.TriggerJumpscare(jumpscareCanvas[1], audioManag, data.jumpscareVolume, data.jumpscareDuration);
-            data.enemySprite = data.walkFrames[0];
+            child.sprite = data.walkFrames[0];
             GetComponent<ChildBehavior>().enabled = false;
+        }
+        if (jumpscareCounter == 1)
+        {
+            mother.Activate();
         }
     }
 }   

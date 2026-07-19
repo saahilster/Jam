@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScarredChild
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: ScarredChild
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: 21300000, guid: b4249d4c064626442a93684cb30942df, type: 3}
   patrolSpeed: 30.2
   chaseSpeed: 0
   searchSpeed: 0
@@ -34,8 +34,8 @@ MonoBehaviour:
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
-  jumpscareVolume: 0.94
-  jumpscareDuration: 4.36
+  jumpscareVolume: 1.78
+  jumpscareDuration: 3.02
   walkFrames:
   - {fileID: 21300000, guid: b4249d4c064626442a93684cb30942df, type: 3}
   chaseFrames: []
