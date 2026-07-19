@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Last
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
   title: Escape??
-  entry: Ahead seems to be some paranormal ritual site. I haven't seen anything like
-    this at all. If only I had the strength to move the rubble over. I'm hungry,
-    thirst, above all else scared.
-  number: 0
-  image: {fileID: 0}
-  playerResponse: ' '
+  entry: 'It is said that this door requires the mask to open it. It asks for the
+    message of the mask. Our party member is stuck in the room with it, but no luck.
+    He is stuck there as rocks caved in. We need a shovel to break through it. '

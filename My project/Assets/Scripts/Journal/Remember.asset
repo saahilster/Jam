@@ -13,9 +13,5 @@ MonoBehaviour:
   m_Name: Remember
   m_EditorClassIdentifier: Assembly-CSharp::JournalSO
   title: I'm going to die.
-  entry: Before I leave this world. Who ever reads this- I believe the catacombs
-    itself is an entity. I lost my sense of heading along with hope. This labyrinth
-    is cursed.
-  number: 0
-  image: {fileID: 0}
-  playerResponse: ' '
+  entry: 'To the right of where i stand lies my trapped teammate.  Rocks cover the
+    entrance to the room. '
