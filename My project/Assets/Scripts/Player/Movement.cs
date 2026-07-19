@@ -90,14 +90,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Read raw input each frame
         moveInput = moveAction.ReadValue<Vector2>();
         MovementState();
-// && moveInput == Vector2.zero
-        Debug.Log(moveInput);
         if(hungerBar == 0 )
         {
-            Debug.Log("i hunger");
             pam.PlaySound(SoundClip.BREATHING, pam.src2, 0.35f);
         }
         // else

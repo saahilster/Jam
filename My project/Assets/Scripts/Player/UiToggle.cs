@@ -38,6 +38,7 @@ public class UiToggle : MonoBehaviour
 
         if (toggled)
         {
+            JournalCanvas.GetComponent<SoundTransmitter>().PlayIt();
             Cursor.lockState = CursorLockMode.None;
         }
         else
