@@ -70,8 +70,12 @@ public class ChildBehavior : MonoBehaviour
                 audioManag.PlaySound(EnemySoundClip.Chase, audioManag.source, 0.6f);
                 if (!agent.hasPath)
                 {
+                    //remove
+                    bool success = agent.SetDestination(waypoints[index].position);
+                    Debug.Log($"SetDestination success={success}, isOnNavMesh={agent.isOnNavMesh}, target={waypoints[index].position}");
                     agent.SetDestination(waypoints[index].position);
                 }
+                Debug.Log($"remaining={agent.remainingDistance}, stopping={agent.stoppingDistance}, status={agent.pathStatus}, pending={agent.pathPending}, speed={agent.speed}, isStopped={agent.isStopped}");
                 if (agent.hasPath && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
                     index = (index + 1) % waypoints.Length;
@@ -107,7 +111,7 @@ public class ChildBehavior : MonoBehaviour
         //Insert Effects
         if (jumpscareCounter < 3)
         {
-            currentState = State.Flee;
+            //currentState = State.Flee;
             jumpscare.TriggerJumpscare(jumpscareCanvas[0], audioManag, data.jumpscareVolume, data.jumpscareDuration);
             jumpscareCounter += 1;
         }

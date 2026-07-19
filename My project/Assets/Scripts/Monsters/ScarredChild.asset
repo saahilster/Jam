@@ -35,7 +35,7 @@ MonoBehaviour:
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
   jumpscareVolume: 1.78
-  jumpscareDuration: 4.36
+  jumpscareDuration: 3.02
   walkFrames:
   - {fileID: 21300000, guid: b4249d4c064626442a93684cb30942df, type: 3}
   chaseFrames: []
