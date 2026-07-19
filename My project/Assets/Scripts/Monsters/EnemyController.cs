@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
                 }
                 if (growlTimer >= 6f)
                 {
-                    audioManag.PlaySound(EnemySoundClip.Growl, audioManag.source, 0.6f);
+                    audioManag.PlaySound(EnemySoundClip.Growl, audioManag.source, 0.2f);
                     growlTimer = Time.deltaTime;
                 }
                 else
@@ -129,14 +129,14 @@ public class EnemyController : MonoBehaviour
                 }
                 if (roarTimer >= 4.5f)
                 {
-                    audioManag.PlaySound(EnemySoundClip.Roar, audioManag.source, 0.6f);
+                    audioManag.PlaySound(EnemySoundClip.Roar, audioManag.source, 0.8f);
                     roarTimer = 0f;
                 }
                 else
                 {
                     roarTimer += Time.time;
                 }
-                audioManag.PlaySound(EnemySoundClip.Chase, audioManag.src2, 0.6f);
+                audioManag.PlaySound(EnemySoundClip.Chase, audioManag.src2, 0.8f);
                 break;
             case State.Search:
                 searchTimer += Time.deltaTime;
