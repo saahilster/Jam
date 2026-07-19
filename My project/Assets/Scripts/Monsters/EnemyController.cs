@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private EnemySpriteAnimator spriteAnimator;
     [SerializeField] private EnemyAudioManag audioManag;
+    [SerializeField] private GameObject jumpscare;
+    private PlayJumpscare playJumpscare;
     private Transform[] patrolPoints;
     private Transform[] teleportPoints;
 
@@ -53,6 +55,7 @@ public class EnemyController : MonoBehaviour
         currentMovement = patrolMovement;
         detectionBehavior = GetDetectionBehavior(enemyData.detectionType);
         chaseTracking = new SightDetection();
+        playJumpscare = GetComponent<PlayJumpscare>();
         //agent.updateRotation = false;
 
 
@@ -237,5 +240,10 @@ public class EnemyController : MonoBehaviour
         agent.Warp(patrolPoints[index].position);
         currentState = State.Patrol;
         currentMovement = GetMovementForState(currentState);
+    }
+    public void JumpscareWoman()
+    {
+        audioManag.StopSound(audioManag.source);
+        playJumpscare.TriggerJumpscare(jumpscare, audioManag , 0.6f, enemyData.jumpscareDuration);
     }
 }

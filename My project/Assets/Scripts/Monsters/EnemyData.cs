@@ -30,6 +30,8 @@ public class EnemyData : ScriptableObject
     public AudioClip[] footstepSounds;
     public AudioClip detectionSound;
     public AudioClip attackSound;
+    public float jumpscareVolume;
+    public float jumpscareDuration;
 
     //Animation
     [Header("Animation")]
@@ -37,6 +39,7 @@ public class EnemyData : ScriptableObject
     public Sprite[] chaseFrames;
     public float animationFrameRate;
     public float animationWalkFrameRate;
+    
 }
 
 public enum MovementType { Patrol, Chase, Flee, Search}

@@ -8,13 +8,14 @@ public enum EnemySoundClip
     Growl,
     Chase,
     Roar,
-    Music
+    Jumpscare
 }
 
 public class EnemyAudioManag : MonoBehaviour
 {
     [SerializeField] public AudioSource source;
     [SerializeField] public AudioSource src2;
+    [SerializeField] public AudioSource src3;
     [SerializeField] List<AudioClip> clips = new List<AudioClip>{};
 
     public EnemySoundClip state;

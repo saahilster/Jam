@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Bits: 64
   lostInterestTime: 4
   chaseLoseDuration: 4.43
-  hearingRadius: 20
+  hearingRadius: 25
   micThreshhold: 0.03
   searchDuration: 15.9
   damageToPlayer: 5
@@ -34,6 +34,8 @@ MonoBehaviour:
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
+  jumpscareVolume: 0
+  jumpscareDuration: 0
   walkFrames:
   - {fileID: 21300000, guid: 7ecdc41d2adfa624dba74339711abfe2, type: 3}
   - {fileID: 21300000, guid: d19cda493be27894ebdee8c8a123bc51, type: 3}

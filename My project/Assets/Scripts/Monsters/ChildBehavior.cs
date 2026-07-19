@@ -1,10 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ChildBehavior : MonoBehaviour
 {
+    [SerializeField] private Transform playerCam;
     [SerializeField] private Transform waypointsParent;
     [SerializeField] private EnemyData data;
+    [SerializeField] private float viewDistance = 6f;
+    [SerializeField] private LayerMask obstructionMask;
+    [SerializeField] private float viewAngle = 30f;
+    [SerializeField] private EnemyAudioManag audioManag;
+    [SerializeField] List<GameObject> jumpscareCanvas = new List<GameObject>{};
+    private PlayJumpscare jumpscare;
+    private int jumpscareCounter = 0;
+
     private NavMeshAgent agent;
     private Transform[] waypoints;
     private float lookTimer;
@@ -28,6 +38,7 @@ public class ChildBehavior : MonoBehaviour
         }
         agent.speed = data.patrolSpeed;
         currentState = State.Flee;
+        jumpscare = GetComponent<PlayJumpscare>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -49,7 +60,6 @@ public class ChildBehavior : MonoBehaviour
                 {
                     //Insert trigger effect
                     TriggerEffect();
-                    currentState = State.Flee;
                     lookTimer = 0f;
                 }
                 break;
@@ -70,10 +80,35 @@ public class ChildBehavior : MonoBehaviour
 
     private bool IsBeingObserved()
     {
+        Vector3 dirToChild = transform.position - playerCam.position;
+        float distance = dirToChild.magnitude;
+
+        if (distance > viewDistance) return false;
+
+        float angle = Vector3.Angle(playerCam.forward, dirToChild);
+        if (angle > viewAngle * 0.5f) return false;
+
+        if (Physics.Raycast(playerCam.position, dirToChild.normalized, out RaycastHit hit, distance, obstructionMask))
+        {
+            return false;
+        }
+
         return true;
     }
     private void TriggerEffect()
     {
         //Insert Effects
+        if (jumpscareCounter < 3)
+        {
+            currentState = State.Flee;
+            jumpscare.TriggerJumpscare(jumpscareCanvas[0], audioManag, data.jumpscareVolume, data.jumpscareDuration);
+            jumpscareCounter += 1;
+        }
+        else
+        {
+            jumpscare.TriggerJumpscare(jumpscareCanvas[1], audioManag, data.jumpscareVolume, data.jumpscareDuration);
+            data.enemySprite = data.walkFrames[0];
+            GetComponent<ChildBehavior>().enabled = false;
+        }
     }
-}
+}   
