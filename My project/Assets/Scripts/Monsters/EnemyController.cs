@@ -244,6 +244,6 @@ public class EnemyController : MonoBehaviour
     public void JumpscareWoman()
     {
         audioManag.StopSound(audioManag.source);
-        playJumpscare.TriggerJumpscare(jumpscare, audioManag , 0.6f, enemyData.jumpscareDuration);
+        playJumpscare.TriggerJumpscare(jumpscare, audioManag , 1f, enemyData.jumpscareDuration);
     }
 }
