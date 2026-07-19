@@ -27,7 +27,7 @@ public class PlayerHP : MonoBehaviour
 
     public void ImpairSight()
     {
-        RenderSettings.fogDensity = fogDensity[currentFog];
+        RenderSettings.fogDensity += 0.025f;
     }
 
     public void LoseHP()
