@@ -24,8 +24,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lostInterestTime: 4
-  chaseLoseDuration: 6.23
-  hearingRadius: 8.18
+  chaseLoseDuration: 4.43
+  hearingRadius: 20
   micThreshhold: 0.03
   searchDuration: 15.9
   damageToPlayer: 5
@@ -35,8 +35,10 @@ MonoBehaviour:
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
   walkFrames:
-  - {fileID: 21300000, guid: 529d208b61789e04691a973f8712081a, type: 3}
+  - {fileID: 21300000, guid: 7ecdc41d2adfa624dba74339711abfe2, type: 3}
+  - {fileID: 21300000, guid: d19cda493be27894ebdee8c8a123bc51, type: 3}
   chaseFrames:
   - {fileID: 21300000, guid: 7ecdc41d2adfa624dba74339711abfe2, type: 3}
   - {fileID: 21300000, guid: d19cda493be27894ebdee8c8a123bc51, type: 3}
-  animationFrameRate: 1.22
+  animationFrameRate: 0.23
+  animationWalkFrameRate: 2.05
