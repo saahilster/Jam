@@ -1884,6 +1884,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4375022801123004992, guid: c102b0d9138b2a846bca084b5ad2947a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375022801123004992, guid: c102b0d9138b2a846bca084b5ad2947a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6743570338088971102, guid: c102b0d9138b2a846bca084b5ad2947a, type: 3}
       propertyPath: m_Name
       value: WaypointLadyTeleport
@@ -4448,11 +4456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6524874892288712235, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.459
+      value: -38.09
       objectReference: {fileID: 0}
     - target: {fileID: 6524874892288712235, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.139
+      value: 57.6
       objectReference: {fileID: 0}
     - target: {fileID: 6847835010543987107, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4464,11 +4472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606156601895206589, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.9
+      value: 66.35
       objectReference: {fileID: 0}
     - target: {fileID: 7606156601895206589, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90.48
+      value: 94.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11911,7 +11919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474234350371407343, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.26
+      value: -31.77
       objectReference: {fileID: 0}
     - target: {fileID: 5474234350371407343, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11919,7 +11927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5474234350371407343, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.3
+      value: 49.16
       objectReference: {fileID: 0}
     - target: {fileID: 5474234350371407343, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13709,7 +13717,7 @@ Transform:
   m_GameObject: {fileID: 1604510770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.64, y: 0, z: 57.18}
+  m_LocalPosition: {x: 42.76, y: 0, z: 63.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14323,7 +14331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563893138517608537, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.9
+      value: -28.51
       objectReference: {fileID: 0}
     - target: {fileID: 3563893138517608537, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14331,7 +14339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563893138517608537, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52.5
+      value: 50.85
       objectReference: {fileID: 0}
     - target: {fileID: 3563893138517608537, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18318,7 +18326,7 @@ PrefabInstance:
       objectReference: {fileID: 1994842090}
     - target: {fileID: 3365561529621753852, guid: b246239076387524eb5f4ce9ceafc678, type: 3}
       propertyPath: prompt
-      value: Investigate
+      value: Stare at him 4 times
       objectReference: {fileID: 0}
     - target: {fileID: 5675753682912460663, guid: b246239076387524eb5f4ce9ceafc678, type: 3}
       propertyPath: m_Name

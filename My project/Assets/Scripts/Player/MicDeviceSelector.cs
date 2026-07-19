@@ -47,6 +47,7 @@ public class MicDeviceSelector : MonoBehaviour
         string newDevice = Microphone.devices[index];
         if (newDevice == currentDevice) return;
         currentDevice = newDevice;
+        GlobalMicDevice.SelectedDevice = currentDevice;
         micListener.SetDevice(currentDevice);
     }
 }

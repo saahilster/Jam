@@ -19,7 +19,7 @@ public class MicListener : MonoBehaviour
 
     private void Start()
     {
-
+        SetDevice(GlobalMicDevice.SelectedDevice);
     }
     private void Update()
     {
