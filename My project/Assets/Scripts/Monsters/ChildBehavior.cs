@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-public class ChildBehavior : MonoBehaviour
+using UnityEngine.Events;
+public class ChildBehavior : MonoBehaviour 
 {
     [SerializeField] private Transform playerCam;
     [SerializeField] private Transform waypointsParent;
@@ -13,13 +13,15 @@ public class ChildBehavior : MonoBehaviour
     [SerializeField] private EnemyAudioManag audioManag;
     [SerializeField] List<GameObject> jumpscareCanvas = new List<GameObject>{};
     [SerializeField] private EnemyController mother;
+    [SerializeField] private SpriteRenderer child;
+    public UnityEvent childEvent;
     private PlayJumpscare jumpscare;
     private int jumpscareCounter = 0;
 
     private NavMeshAgent agent;
     private Transform[] waypoints;
     private float lookTimer;
-    private float lookDuration = 4f;
+    private float lookDuration = 2.5f;
     private State currentState;
     private int index = 0;
     private enum State {Flee, Waiting, Dead};
@@ -118,7 +120,7 @@ public class ChildBehavior : MonoBehaviour
         else
         {
             jumpscare.TriggerJumpscare(jumpscareCanvas[1], audioManag, data.jumpscareVolume, data.jumpscareDuration);
-            data.enemySprite = data.walkFrames[0];
+            child.sprite = data.walkFrames[0];
             GetComponent<ChildBehavior>().enabled = false;
         }
         if (jumpscareCounter == 1)

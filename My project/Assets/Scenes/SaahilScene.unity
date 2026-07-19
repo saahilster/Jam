@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.18867922, g: 0.14836238, b: 0.05428977, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.063
+  m_FogDensity: 0.01
   m_LinearFogStart: 537.27
   m_LinearFogEnd: 609.41003
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -4464,11 +4464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606156601895206589, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.38
+      value: 65.9
       objectReference: {fileID: 0}
     - target: {fileID: 7606156601895206589, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 93.16
+      value: 90.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9334,6 +9334,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2754214293865361180, guid: 89571268c80c6914eaa14bf9591d7355, type: 3}
   m_PrefabInstance: {fileID: 7288205}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1099076069 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3198999052591183171, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+  m_PrefabInstance: {fileID: 1660414072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1099393044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7159523318395285267, guid: ab650fdf571a8944d8864e3366149027, type: 3}
@@ -11759,6 +11764,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7436898668632358749}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoseHP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerHP, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1959883227723898870, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -14132,6 +14165,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 1099076069}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: mother
       value: 
       objectReference: {fileID: 1450709878}
@@ -14146,6 +14183,34 @@ PrefabInstance:
     - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: obstructionMask.m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7436898668632358749}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ImpairSight
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerHP, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: childEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 922768143365127634, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_Layer
@@ -43447,6 +43512,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9066246966100838887, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7436898668632358741}
+    - targetCorrespondingSourceObject: {fileID: 9066246966100838887, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7436898668632358749}
     - targetCorrespondingSourceObject: {fileID: 5694034167197107043, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1618972220}
@@ -43469,6 +43537,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerNoise
   decayRate: 1
+--- !u!114 &7436898668632358749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43289679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b818a742f3841ee4ab6f02cbb1380be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHP
+  dead:
+    m_PersistentCalls:
+      m_Calls: []
+  playerHP: 3
 --- !u!33 &7445972842868936317
 MeshFilter:
   m_ObjectHideFlags: 0
