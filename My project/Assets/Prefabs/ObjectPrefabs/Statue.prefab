@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5995562674228979950}
   - component: {fileID: 3125618533476159157}
   - component: {fileID: 25090073956282039}
+  - component: {fileID: -6410995785247427573}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
@@ -203,3 +204,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6410995785247427573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121796695356651877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ada57af234d149b29d4fd374e5d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  rotationThreshhold: 20

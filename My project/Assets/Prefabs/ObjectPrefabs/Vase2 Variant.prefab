@@ -63,5 +63,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2560199169170880969, guid: cf0a05c3409ed7d468db2267b29aa632, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1396234911111013366}
   m_SourcePrefab: {fileID: 100100000, guid: cf0a05c3409ed7d468db2267b29aa632, type: 3}
+--- !u!1 &9166939037417248251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560199169170880969, guid: cf0a05c3409ed7d468db2267b29aa632, type: 3}
+  m_PrefabInstance: {fileID: 6678879926193794098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1396234911111013366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166939037417248251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ada57af234d149b29d4fd374e5d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
+  rotationThreshhold: 20
