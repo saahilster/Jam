@@ -40172,7 +40172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -28.8
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40180,7 +40180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7
+      value: 53.1
       objectReference: {fileID: 0}
     - target: {fileID: 7657074667741426828, guid: c5cbd6aa2b3f45842bbc4e4c92dfe593, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42107,6 +42107,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 43289701}
     - target: {fileID: 2952365578907010281, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: floorMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2952365578907010281, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: patrolPointsParent
       value: 
       objectReference: {fileID: 2006092683}
@@ -43835,11 +43839,19 @@ PrefabInstance:
     - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: playerCam
       value: 
-      objectReference: {fileID: 720383840}
+      objectReference: {fileID: 43289701}
     - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: waypointsParent
       value: 
       objectReference: {fileID: 628372141}
+    - target: {fileID: 906539240782058189, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: obstructionMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347385287106759952, guid: f2f38f4bd1301644aa25383298289038, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3.06
+      objectReference: {fileID: 0}
     - target: {fileID: 3563893138517608537, guid: f2f38f4bd1301644aa25383298289038, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.37

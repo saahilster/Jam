@@ -34,9 +34,10 @@ MonoBehaviour:
   footstepSounds: []
   detectionSound: {fileID: 0}
   attackSound: {fileID: 0}
-  jumpscareVolume: 0.62
-  jumpscareDuration: 6.61
-  walkFrames: []
+  jumpscareVolume: 0.94
+  jumpscareDuration: 4.36
+  walkFrames:
+  - {fileID: 21300000, guid: b4249d4c064626442a93684cb30942df, type: 3}
   chaseFrames: []
   animationFrameRate: 0
   animationWalkFrameRate: 0
