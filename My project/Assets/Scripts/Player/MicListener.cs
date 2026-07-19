@@ -7,22 +7,25 @@ public class MicListener : MonoBehaviour
     [SerializeField] private int sampleWindow = 256;
     [SerializeField] private int frequency = 16000;
     [SerializeField] private int lengthSec = 1;
+    [SerializeField] private float micSensitivity = 1f;
     private AudioClip micClip;
     private string micDevice;
     private float currentVolume;
     private bool isRecording;
 
     public float GetMicVolume() => currentVolume;
+    
     public bool IsRecording() => isRecording;
 
     private void Start()
     {
-        SetDevice(Microphone.devices[0]);
+
     }
     private void Update()
     {
         if (!isRecording || micClip == null) return;
         currentVolume = CalculateVolume();
+        PlayerNoise.Instance.AddNoise(currentVolume * micSensitivity);
     }
 
     public void SetDevice(string deviceName)

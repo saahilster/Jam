@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Snack") && hungerBar < 5)
         {
             Debug.Log("I ate the bar");
-            hungerBar++;
+            hungerBar += 2;
         }
     }
 }

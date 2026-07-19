@@ -4,8 +4,8 @@ public class AudioDetection : DetectionBehavior
 {
     public bool CanDetectPlayer(EnemyController enemy)
     {
-        Debug.Log(CanHearMic(enemy));
-        return CanHearMic(enemy) || CanHearPlayerNosie(enemy);
+
+        return CanHearPlayerNosie(enemy);
     }
     public bool CanHearMic(EnemyController enemy)
     {
@@ -18,8 +18,10 @@ public class AudioDetection : DetectionBehavior
             Debug.LogWarning("Playernoise Instance null");
             return false;
         }
+        float noiseLevel = PlayerNoise.Instance.GetNoiseLevel();
+        if (noiseLevel <= enemy.Data.micThreshhold) return false;
         float distance = Vector3.Distance(enemy.transform.position, enemy.Player.position);
-        return distance <= enemy.Data.hearingRadius * PlayerNoise.Instance.GetNoiseLevel();
+        return distance <= enemy.Data.hearingRadius;
     }
     public State GetReactionState() => State.Search;
 }
