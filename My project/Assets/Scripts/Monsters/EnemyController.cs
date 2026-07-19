@@ -243,6 +243,10 @@ public class EnemyController : MonoBehaviour
     }
     public void TeleportRandom()
     {
+        if (enabled == false)
+        {
+            return;
+        }
         int index = Random.Range(0, teleportPoints.Length);
         agent.Warp(patrolPoints[index].position);
         currentState = State.Patrol;
