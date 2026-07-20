@@ -4464,11 +4464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847835010543987107, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.52
+      value: 89.4
       objectReference: {fileID: 0}
     - target: {fileID: 6847835010543987107, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.49
+      value: 68.7
       objectReference: {fileID: 0}
     - target: {fileID: 7606156601895206589, guid: 8a76ef19a60861a4f81d467a248e9ece, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11849,6 +11849,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
+      propertyPath: enemyController
+      value: 
+      objectReference: {fileID: 1450709878}
     - target: {fileID: 1719488457399310810, guid: 0a0d17ac582de2b4b8b265fa940f26d4, type: 3}
       propertyPath: TouchedPlayer.m_PersistentCalls.m_Calls.Array.size
       value: 3

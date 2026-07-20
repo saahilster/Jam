@@ -6,10 +6,14 @@ public class MonsterAdapter : MonoBehaviour
 {
     public UnityEvent TouchedPlayer;
     [SerializeField] List<Transform> tpSpots = new List<Transform>{};
+    [SerializeField] private EnemyController enemyController;
 
     void Start()
     {
-        
+        if (enemyController == null)
+        {
+            enemyController = GetComponent<EnemyController>();
+        }
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class MonsterAdapter : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!enemyController.enabled) return;
         if (collision.gameObject.CompareTag("Player"))
         {
             TouchedPlayer.Invoke();            

@@ -121,12 +121,16 @@ public class ChildBehavior : MonoBehaviour
         else
         {
             jumpscare.TriggerJumpscare(jumpscareCanvas[1], audioManag, data.jumpscareVolume, data.jumpscareDuration);
-            child.sprite = data.walkFrames[0];
+            
             GetComponent<ChildBehavior>().enabled = false;
         }
         if (jumpscareCounter == 1)
         {
             mother.Activate();
+        }
+        if (jumpscareCounter == 2)
+        {
+            child.sprite = data.walkFrames[0];
         }
     }
 }   
