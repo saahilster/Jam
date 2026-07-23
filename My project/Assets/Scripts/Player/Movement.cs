@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         while (Keyboard.current.shiftKey.isPressed && hungerBar > 0)
         {
             hungerBar--;
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.25f);
         }
 
         sprintCalled = false;
