@@ -5,17 +5,45 @@ using UnityEngine;
 
 public class JournalCollection : MonoBehaviour
 {
-    public int currentIndex = 0;
-    [SerializeField] List<JournalSO> journalEntries = new List<JournalSO> {};
+    public int currentIndex = -1;
+    [SerializeField] public List<JournalSO> journalEntries = new List<JournalSO> { };
+    [SerializeField] GameObject previous;
+    [SerializeField] GameObject next;
     [SerializeField] TextMeshProUGUI entryTitle;
     [SerializeField] TextMeshProUGUI entryBody;
-    [SerializeField] TextMeshProUGUI entryCount;
+
+    void Update()
+    {
+        ArrowUpdate();
+    }
 
     void FixedUpdate()
     {
         entryTitle.text = journalEntries[currentIndex].title;
         entryBody.text = journalEntries[currentIndex].entry;
-        entryCount.text = journalEntries[currentIndex].number.ToString();
+    }
+
+    public void ArrowUpdate()
+    {
+        if (journalEntries.Count == 0 && currentIndex == 0)
+        {
+            previous.SetActive(false);
+            next.SetActive(false);
+        }  
+        else
+        {
+            previous.SetActive(true);
+            next.SetActive(true);
+        } 
+        
+        if (currentIndex == 0)
+        {
+            previous.SetActive(false);
+        }
+        else if (currentIndex == journalEntries.Count - 1)
+        {
+            next.SetActive(false);
+        }
     }
 
     public void AddToCollection(JournalSO entry)
@@ -44,14 +72,19 @@ public class JournalCollection : MonoBehaviour
         {
             currentIndex++;
         }
-        
+
     }
     public void DecrementEntry()
     {
-        if(currentIndex > 0)
+        if (currentIndex > 0)
         {
             currentIndex--;
         }
-        
+
+    }
+
+    public void GoToPage()
+    {
+        currentIndex = journalEntries.Count - 1;
     }
 }

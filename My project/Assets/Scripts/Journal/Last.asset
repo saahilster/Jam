@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c0819852a80204586d7f9de68fa6d1, type: 3}
+  m_Name: Last
+  m_EditorClassIdentifier: Assembly-CSharp::JournalSO
+  title: Escape??
+  entry: 'It is said that this door requires the mask to open it. It asks for the
+    message of the mask. Our party member is stuck in the room with it, but no luck.
+    He is stuck there as rocks caved in. We need a shovel to break through it. '
