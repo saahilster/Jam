@@ -41,7 +41,6 @@ The ending puzzle is an altar with three slots that cycle through `mem` / `ento`
 - **One noise value, many listeners** — mic input, movement, and world events all collapse into a single `PlayerNoise` level with a decay curve. Detection systems just read that number, which keeps monster behavior easy to tune.
 - **Behavior split into small classes** — movement (`PatrolMovement`, `ChaseMovement`, `SearchMovement`) and detection (`SightDetection`, `AudioDetection`) are separate strategies the `EnemyController` swaps at runtime, so new enemy types are mostly data.
 - **Lore is opt-in** — story lives in collectible journal pages, so players who just want to run and survive can, and players who want context can dig for it.
-- **"Don't go left."** — level design leans on a few strong, memorable rules over a map or objective markers.
 
 ## Tech
 
